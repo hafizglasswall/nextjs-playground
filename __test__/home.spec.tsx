@@ -1,9 +1,11 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import Home from '../src/pages/index'
 
-describe('Home testing example', () => {
+
+
+describe('Welcome to nextjs tests', () => {
     it('should render home', () => { 
-        const { container } = render(<Home />)
-        expect(container).toMatchSnapshot()
+        render(<Home />)
+        expect(screen.getByText('Also welcome react testing library')).toBeInTheDocument();
     })
 })
